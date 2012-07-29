@@ -671,8 +671,28 @@ windowDef AmmoParent {
 
 	}
 
+	windowDef BorderBottom {
+		rect		12,382,270,64
+		matcolor	0.2, 0.45, 0.4, pdflick2 [ time * .0025 ] / 3
+		background	"guis/assets/hud/mp/lborder1b"
+	}
 
+	windowDef Stamina {
+		rect		12, 382, ("gui::player_stamina" * 1.33), 64
+		visible ("gui::player_nostamina" != 1)
+		windowDef StaminaImage {
+			rect		1, 9, 133, 54
+			matcolor	0.7, 0.5, 0.3, 0.35
+			background	"guis/assets/hud/mp/lstafill1"
+		}
+	}
 
+	windowDef StaminaHell {
+		rect		13, 430, 133, 16
+		matcolor	1,1,1,0.1//0.7, 0.5, 0.3, 0.35
+		background	"gui/hell/stamina"
+		visible ("gui::player_nostamina" == 1)
+	}
 
 ////////////////////////////
 //WEAPON ICONS
