@@ -52,6 +52,8 @@ entityDef weapon_fists {
 	"skin_invisible"			"skins/fists_invis"
 	
 	"stealing"					"1"					// this weapon steals other player weapon
+
+    "speedModifier"             "2.0"
 }
 
 model viewmodel_fists {
