@@ -77,6 +77,7 @@ object player_base {
 	boolean		AI_ATTACK_HELD;
 	boolean		AI_WEAPON_FIRED;
 	boolean		AI_JUMP;
+	boolean		AI_CLIMB;
 	boolean		AI_DEAD;
 	boolean		AI_PRONE;
 	boolean		AI_CROUCH;
