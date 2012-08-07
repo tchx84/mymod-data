@@ -1,0 +1,6 @@
+textures/mymod/target
+{
+    qer_editorimage textures/mymod/target.tga
+	diffusemap		textures/mymod/target.tga
+	solid
+}
