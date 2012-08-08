@@ -74,6 +74,7 @@ entityDef weapon_plasmagun {
 	"silent_fire"				"0"
 	"smoke_muzzle"				"plasmamuzzlesmoke.prt"
 	"gib"				"1"
+	"recoilAngles"				"-2 0 0"
 
 	"weaponAngleOffsetAverages" "15"
 	"weaponAngleOffsetScale" 	".40"

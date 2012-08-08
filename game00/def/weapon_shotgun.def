@@ -69,7 +69,7 @@ entityDef weapon_shotgun {
 	"flashRadius"				"120"
 	"silent_fire"				"0"
 	"recoilTime"				"325"
-	"recoilAngles"				"-1 0 0"
+	"recoilAngles"				"-10 0 0"
 
 	"weaponAngleOffsetAverages" "15"
 	"weaponAngleOffsetScale" 	".40"

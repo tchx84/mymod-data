@@ -79,7 +79,7 @@ entityDef weapon_pistol {
 	"flashRadius"				"120"
 	"silent_fire"				"0"
 	"recoilTime"				"125"
-	"recoilAngles"				"-1 0 0"
+	"recoilAngles"				"-3 0 0"
 
 	"weaponAngleOffsetAverages" "10"
 	"weaponAngleOffsetScale" 	".25"
