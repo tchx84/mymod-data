@@ -15,6 +15,7 @@ object weapon_base {
 	boolean		WEAPON_NETFIRING;
 	boolean		WEAPON_RAISEWEAPON;
 	boolean		WEAPON_LOWERWEAPON;
+	boolean		WEAPON_IRONSIGHT;
 
 				// required by player script.
 	boolean		WEAPON_START_FIRING;
