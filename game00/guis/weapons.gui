@@ -1,0 +1,272 @@
+windowDef Desktop {
+    rect        0 ,0 ,640 ,480 
+    backcolor   0, 0, 0, 0
+	visible	1
+	menugui	1
+
+	float	"valueType"	0
+    
+    onActivate {
+        if( "gui::spawn" == 0 ) {
+			set "Cancel::visible" "1" ;            
+        } else {
+			set "Cancel::visible" "0" ;            
+        }                
+    }
+
+	onEvent {
+		if ( "valueType" != 0 ) {
+			set "ValueTypeMessage::visible" "0" ;
+			set "WeaponShot::visible" "0" ;
+			set "WeaponVal::visible" "0" ;
+
+			if ( "valueType" == 1 ) {
+				set "ValueTypeMessage::visible" "1" ;
+			}
+			if ( "valueType" == 2 ) {
+				set "ValueTypeMessage::visible" "1" ;
+				set "WeaponShot::visible" "1" ;
+				set "WeaponVal::visible" "1" ;
+			}
+			set "valueType" "0" ;
+		}
+	}
+
+
+	onESC {
+        if( "gui::spawn" == 0 ) {
+		    set "cmd" "close" ;
+        }
+	}
+
+	windowDef BoxParent
+	{
+		rect	28,-10,512,273
+		visible	1
+		windowDef boxbg2
+		{
+			rect	10,49,434,178
+			backcolor	0.1, 0.2, 0.2, 0.5
+			bordercolor	0.1, 0.25, 0.25, 1
+			bordersize	1
+			visible	1
+		}
+		windowDef BorderTM2
+		{
+			rect	10,41,434,8
+			matcolor	0.2, 0.45, 0.4, pdflick2 [ time * .0025 ] / 2.5
+			background	"guis/assets/hud/mp/score_horiz"
+			visible	1
+		}
+		windowDef BorderTR2
+		{
+			rect	444,41,8,8
+			matcolor	0.2, 0.45, 0.4, pdflick2 [ time * .0025 ] / 2.5
+			background	"guis/assets/hud/mp/score_corner"
+			visible	1
+		}
+		windowDef BorderR2
+		{
+			rect	444,49,8,178
+			matcolor	0.2, 0.45, 0.4, pdflick2 [ time * .0025 ] / 2.5
+			background	"guis/assets/hud/mp/score_vert"
+			visible	1
+		}
+		windowDef BorderBM2
+		{
+			rect	10,227,434,-8
+			matcolor	0.2, 0.45, 0.4, pdflick2 [ time * .0025 ] / 2.5
+			background	"guis/assets/hud/mp/score_horiz"
+			visible	1
+		}
+		windowDef BorderBR2
+		{
+			rect	444,227,8,-8
+			matcolor	0.2, 0.45, 0.4, pdflick2 [ time * .0025 ] / 2.5
+			background	"guis/assets/hud/mp/score_corner"
+			visible	1
+		}
+		windowDef BorderBL2
+		{
+			rect	2,227,-8,-8
+			matcolor	0.2, 0.45, 0.4, pdflick2 [ time * .0025 ] / 2.5
+			background	"guis/assets/hud/mp/score_corner"
+			visible	1
+		}
+		windowDef BorderL2
+		{
+			rect	2,49,-8,178
+			matcolor	0.2, 0.45, 0.4, pdflick2 [ time * .0025 ] / 2.5
+			background	"guis/assets/hud/mp/score_vert"
+			visible	1
+		}
+		windowDef BorderTL2
+		{
+			rect	2,41,-8,8
+			matcolor	0.2, 0.45, 0.4, pdflick2 [ time * .0025 ] / 2.5
+			background	"guis/assets/hud/mp/score_corner"
+			visible	1
+		}
+
+		windowDef WeaponsWindow
+		{
+			rect	10,49,427,175
+			visible	1
+			windowDef WeaponsTitle
+			{
+				rect	6,2,100,14
+				font	"fonts/bank"
+				text	"Select Weapons"
+				textscale	0.25
+				textaligny	-6
+				forecolor	1, 1, 1, 1
+				noevents	1
+				visible	1
+				shadow	1
+			}
+			windowDef VoteTypeVal1
+			{
+				rect	6,17,160,155
+				forecolor	1,1,1,0.6
+				bordercolor	0.149,0.247,0.247,1
+				bordersize	1
+				visible	1
+				backcolor	0,0,0,0.6
+			}
+			windowDef SecondaryWeapon
+			{
+				rect	9,19,154,18
+				textaligny -4
+				forecolor	1,1,1,0.6
+				textscale	0.25
+				font	"fonts/bank"
+				text	"Secondary Weapon"
+				visible	1
+
+				onMouseEnter {
+					transition "forecolor" "1 1 1 0.6" "1 1 1 1" "50" ;
+				}
+				onMouseExit {
+					transition "forecolor" "1 1 1 1" "1 1 1 0.6" "50" ;
+				}
+				onAction {
+					set	"cmd"	"play guisounds_menuclickup" ;
+					set "desktop::valueType" "1" ;
+					set "SecondaryWeapon::backcolor" "0.6 1 1 0.1" ;
+					set "PrimaryWeapon::backcolor" "0.6 1 1 0" ;
+				}
+
+			}
+			windowDef PrimaryWeapon
+			{
+				rect	9,38,154,18
+				textaligny -4
+				forecolor	1,1,1,0.6
+				textscale	0.25
+				font	"fonts/bank"
+				text	"Primary Weapon"
+				visible	1
+
+				onMouseEnter {
+					transition "forecolor" "1 1 1 0.6" "1 1 1 1" "50" ;
+				}
+				onMouseExit {
+					transition "forecolor" "1 1 1 1" "1 1 1 0.6" "50" ;
+				}
+				onAction {
+					set	"cmd"	"play guisounds_menuclickup" ;
+					set "cmd" "WeaponScan" ;
+					set "desktop::valueType" "2" ;
+					set "SecondaryWeapon::backcolor" "0.6 1 1 0" ;
+					set "PrimaryWeapon::backcolor" "0.6 1 1 0.1" ;
+				}
+
+			}
+			windowDef ValueTypeMessage
+			{
+				rect	171,18,200,14
+				text	"Select Weapon"
+				font	"fonts/bank"
+				textscale	0.25
+				textaligny	-6
+				forecolor	1, 1, 1, 1
+				noevents	1
+				visible	0
+				shadow	2
+			}
+			windowDef WeaponShot
+			{
+				rect	300, 38, 128, 96
+				background	"gui::current_weaponshot"
+				matcolor	1, 1, 1, 1
+				bordersize	1
+				bordercolor	0.4, 0.6, 0.6, 1
+				noevents	1
+				visible	0
+			}
+			listDef WeaponVal
+			{
+				rect	168, 34, 128, 120
+				forecolor	1, 1, 1, 0.6
+				bordercolor	0.4, 0.6, 0.6, 0.5
+				textscale	0.25
+				font	"fonts/bank"
+				listName	"weaponList"
+				visible	0
+
+				onAction {
+					set "cmd" "play guisounds_menuclickup" ;
+					set "cmd" "click_weaponList" ;
+				}
+
+			}
+
+			windowDef Accept
+			{
+				rect	171,153,125,18
+				forecolor	0.6, 1, 1, 1
+				bordercolor	0.4,0.7,0.7,1
+				textscale	0.25
+				font	"fonts/bank"
+				text	"Accept"
+				bordersize	1
+				textalign	1
+				visible	1
+				backcolor	0.6,1,1,0.3
+				textaligny	-5
+
+				onAction {
+					set	"cmd"	"play guisounds_menuclickup" ;
+				}
+
+				onActionRelease {
+		            set "cmd" "SelectSpawnWeapons" ;
+		            set "cmd" "close" ;
+				}
+			}
+			windowDef Cancel
+			{
+				rect	300,153,128,18
+				forecolor	0.6, 1, 1, 1
+				bordercolor	0.4,0.7,0.7,1
+				textscale	0.25
+				font	"fonts/bank"
+				text	"Cancel"
+				bordersize	1
+				textalign	1
+				visible	1
+				backcolor	0.6,1,1,0.3
+				textaligny	-5
+
+				onAction {
+					set	"cmd"	"play guisounds_menuclickup" ;
+				}
+
+				onActionRelease {
+		            set "cmd" "close" ;
+				}
+
+			}
+		}
+	}
+}
