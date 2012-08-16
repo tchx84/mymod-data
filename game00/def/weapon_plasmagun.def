@@ -57,6 +57,7 @@ entityDef weapon_plasmagun {
 	"inv_ammo_cells"			"50"
 	"inv_item"					"5"
 	"icon"						"guis/assets/hud/wpn_5"
+	"shot"						"guis/assets/hud/icons/plasmagunw"
 
 	"gui"						"guis/weapons/plasmagun.gui"
 	"mtr_guiLightShader"		"lights/viewWeaponGuiLight"

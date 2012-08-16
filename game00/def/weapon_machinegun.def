@@ -73,6 +73,8 @@ entityDef weapon_machinegun {
 	"mtr_guiLightShader"		"lights/viewWeaponGuiLight"
 	
 	"icon"						"guis/assets/hud/wpn_3"
+	"shot"						"guis/assets/hud/icons/machinegunw"
+
 	"muzzle_kick_time"			"0.2"
 	"muzzle_kick_maxtime"		"0.6"
 	"muzzle_kick_angles"		"0 0 0"
