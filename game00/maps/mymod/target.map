@@ -2,8 +2,8 @@ Version 2
 // entity 0
 {
 "classname" "worldspawn"
-"editor_drLastCameraPos" "183.037 301.704 88.8189"
-"editor_drLastCameraAngle" "0.299986 246.302 0"
+"editor_drLastCameraPos" "196.709 239.554 85.9014"
+"editor_drLastCameraAngle" "-3.00001 270.602 0"
 // primitive 0
 {
 brushDef3
@@ -403,59 +403,77 @@ brushDef3
 }
 // entity 4
 {
-"classname" "weapon_shotgun_mp"
-"name" "weapon_shotgun_mp_1"
-"origin" "168 120 8"
-}
-// entity 5
-{
-"classname" "weapon_pistol_mp"
-"name" "weapon_pistol_mp_1"
-"origin" "200 120 8"
-}
-// entity 6
-{
-"classname" "weapon_machinegun_mp"
-"name" "weapon_machinegun_mp_1"
-"origin" "232 120 16"
-}
-// entity 7
-{
 "classname" "info_player_multiplayer"
 "name" "info_player_start_1"
 "angle" "90"
 "origin" "160 56 0"
 }
-// entity 8
+// entity 5
 {
 "classname" "info_player_start"
 "name" "info_player_start_2"
 "angle" "90"
 "origin" "160 64 0"
 }
-// entity 9
+// entity 6
 {
 "classname" "info_player_start"
 "name" "info_player_start_3"
 "angle" "90"
 "origin" "96 64 0"
 }
-// entity 10
+// entity 7
 {
 "classname" "info_player_start"
 "name" "info_player_start_4"
 "angle" "90"
 "origin" "224 64 0"
 }
+// entity 8
+{
+"classname" "moveable_explodingbarrel"
+"name" "moveable_explodingbarrel_1"
+"origin" "40 648 0"
+}
+// entity 9
+{
+"classname" "moveable_explodingbarrel"
+"name" "moveable_explodingbarrel_2"
+"origin" "72 672 0"
+}
+// entity 10
+{
+"classname" "moveable_explodingtank"
+"name" "moveable_explodingtank_1"
+"origin" "24 680 24"
+}
 // entity 11
 {
-"classname" "weapon_rocketlauncher_mp"
-"name" "weapon_rocketlauncher_mp_1"
-"origin" "128 120 8"
+"classname" "moveable_explodingbarrel"
+"name" "moveable_explodingbarrel_3"
+"origin" "296 16 0"
 }
 // entity 12
 {
-"classname" "weapon_plasmagun_mp"
-"name" "weapon_plasmagun_mp_1"
-"origin" "80 120 16"
+"classname" "moveable_explodingbarrel"
+"name" "moveable_explodingbarrel_4"
+"origin" "296 16 48"
+}
+// entity 13
+{
+"classname" "moveable_explodingbarrel"
+"name" "moveable_explodingbarrel_5"
+"origin" "296 56 0"
+}
+// entity 14
+{
+"classname" "moveable_diamondbox"
+"name" "moveable_diamondbox_1"
+"origin" "24 32 0"
+}
+// entity 15
+{
+"classname" "moveable_explodingtank"
+"name" "moveable_explodingtank_2"
+"origin" "16 16 36"
 }
